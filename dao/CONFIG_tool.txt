@@ -1,0 +1,24 @@
+#======== CONFIGURATION FILE
+#======== EXPERIMENT
+NAME: consexpression
+REPLIC: 1
+GROUP_NUMBER: 2
+GROUP_NAMES: g1,g2
+REFERENCE_GENOME: data/ref/genome.fa
+#========= FILE PATH
+READS_DIRECTORY: /home/juliana/Documentos/Projeto_Juliana/Datasets
+#data/samples
+GROUP_DIRECTORIES: SRX016367_MAQC_UHR_exp_2_using_phi_X_control_lane,SRX016359_MAQC_Brain_exp_2_using_phi_X_control_lane
+#group1,group2
+#========= SEQUENCING
+PAIRED_END: False
+#========== MAPPING
+THREADS: 6
+#========= COUNT MAPPING
+# Mode options: [union, intersection-strict, intersection-nonempty]
+MODE: union
+ANOTATION_FILE: /home/juliana/Documentos/Projeto_Juliana/Datasets/Referencias/grch37_v19_genecode/gencode.v19.chr_patch_hapl_scaff.annotation.gtf
+#genome.gtf
+#ANOTATION_TYPE: gtf
+#========= OUTPUT
+OUTPUT: data/output/
