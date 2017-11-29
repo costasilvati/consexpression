@@ -268,7 +268,7 @@ class Experiment(object):
         self._limmavoom = LimmaVoom(out_merge_table, self._exp_dao._group_name, self._exp_dao._replic, out_limmavoom)
         self._limmavoom.run_limmavoom()
 
-    def execute_conseus(self, out):
+    def execute_conseus(self):
         gene_de = {}
         read_bay = open(self._bayseq._output, 'r')
         c_b = 0
@@ -383,7 +383,6 @@ class Experiment(object):
         for i in iter(names):
             if (gene_de[i]) >= 4:
                 out_cons.write("\n" + i + "," + str(gene_de[i]))
-
 
     def execute_merge_table(self, out_mapp_list, out_name):
         """

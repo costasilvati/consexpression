@@ -1,10 +1,10 @@
 #======== CONFIGURATION FILE
 #======== EXPERIMENT
-NAME: consexpression
-REPLIC: 1
+NAME: final_compair
+REPLIC: 7
 GROUP_NUMBER: 2
-GROUP_NAMES: g1,g2
-REFERENCE_GENOME: data/ref/genome.fa
+GROUP_NAMES: uhr,brain
+REFERENCE_GENOME: /home/juliana/Documentos/Projeto_Juliana/Datasets/Referencias/GRCh37.p13.genome.fa
 #========= FILE PATH
 READS_DIRECTORY: /home/juliana/Documentos/Projeto_Juliana/Datasets
 #data/samples
@@ -21,4 +21,4 @@ ANOTATION_FILE: /home/juliana/Documentos/Projeto_Juliana/Datasets/Referencias/gr
 #genome.gtf
 #ANOTATION_TYPE: gtf
 #========= OUTPUT
-OUTPUT: data/output/
+OUTPUT: /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/Juliana_Orientação/plos/new_data/consexpression
