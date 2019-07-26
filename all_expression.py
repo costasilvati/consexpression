@@ -2,21 +2,17 @@
 import os
 import sys
 import glob
-pmName = input('/home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo/bo.message')
+pmName = input('bo.message')
 pm = __import__(pmName)
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.message import Message
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/dao.experimentDao import ExperimentDao
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/vo.mappVo import MappVo
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.mappBo import MappBo
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/vo.countVo import CountVo
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.countBo import CountBo
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.edgeR import EdgeR
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.baySeq import BaySeq
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.deseq import DESeq
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.noiseq import Noiseq
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.ebseq import Ebseq
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.limmavoom import LimmaVoom
-# from /home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/consexpression/bo.samseq import SamSeq
+from bo.message import Message
+from dao.experimentDao import ExperimentDao
+from bo.edgeR import EdgeR
+from bo.baySeq import BaySeq
+from bo.deseq import DESeq
+from bo.noiseq import Noiseq
+from bo.ebseq import Ebseq
+from bo.limmavoom import LimmaVoom
+from bo.samseq import SamSeq
 
 class Experiment(object):
     """
@@ -89,6 +85,6 @@ if __name__ == "__main__":
     config_file = sys.argv[1]
     exp_d = ExperimentDao()
     expBo.init_experiment(exp_d, config_file)
-#    expBo.exceute_mapp_count()
-#    expBo.execute_expression_analysis()
+    expBo.exceute_mapp_count()
+    expBo.execute_expression_analysis()
 #    expBo.execute_conseus('consensus_teste.txt')

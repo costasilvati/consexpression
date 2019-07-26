@@ -398,6 +398,7 @@ if __name__ == "__main__":
     config_file = sys.argv[1]
     exp_d = ExperimentDao()
     expBo.init_experiment(exp_d, config_file)
-    expBo.exceute_mapp_count()
+    if(exp_d._reference == ""):
+        expBo.exceute_mapp_count()
     expBo.execute_expression_analysis()
-    expBo.execute_conseus('consensus_teste.txt')
+    expBo.execute_conseus('consensus.txt')
