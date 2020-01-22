@@ -359,7 +359,7 @@ section#subintro {
 }
 
 .highlight.primary {
-	background:#09828c;
+	background:#004A7F;
 }
 
 
@@ -1844,11 +1844,11 @@ footer .footerlogo h6 a:hover {
 
 footer {
 	padding-top:30px;
-	color:#7e7e7e;
+	color:#e9e9e9;
 }
 
 footer.footer {
-	background:#3a3a3a;
+	background:#002c4c;
 }
 
 footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
