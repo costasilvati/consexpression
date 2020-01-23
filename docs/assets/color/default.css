@@ -15,15 +15,15 @@ a {
 }
 
 a:hover {
-	color:#398b5b;
+	color:#004A7F;
 }
 
 footer .nav-list li a:hover,footer ul.regular li a:hover  {
-	color:#398b5b;
+	color:#004A7F;
 }
 
 .btn-link:hover {
-  color: #398b5b;
+  color: #004A7F;
 }
 
 .btn-color {
@@ -34,8 +34,8 @@ footer .nav-list li a:hover,footer ul.regular li a:hover  {
 .btn-color.active,
 .btn-color.disabled,
 .btn-color[disabled] {
-  background: #398b5b;
-  *background: #398b5b;
+  background: #004A7F;
+  *background: #004A7F;
 }
 
 /* portfolio */
@@ -44,11 +44,11 @@ ul.filter li.active a{
 }
 
 ul.filter li a:hover {
-    color: #00A9CC;
+    color: #004A7F;
 }
 
 .portfolio-area li:hover .desc {
-    background: #00A9CC;	
+    background: #004A7F;	
 }
 
 
@@ -57,7 +57,7 @@ ul.filter li a:hover {
 .icon-square:hover,
 .icon-rounded:hover,
 .icon-circled:hover {
-    background-color: #00A9CC;
+    background-color: #004A7F;
 }
 [class^="icon-"].active,
 [class*=" icon-"].active {
@@ -71,7 +71,7 @@ ul.filter li a:hover {
 }
 
 .navbar .nav li ul.dropdown-menu li a:hover, .navbar .nav li.active ul.dropdown-menu li a:hover  {
-	background:#00A9CC;
+	background:#004A7F;
 	
 }
 .color {
