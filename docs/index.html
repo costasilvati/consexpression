@@ -70,33 +70,12 @@
                                                         <li><a href="#">Mapping</a></li>
                                                         <li><a href="#">Count read alignment</a></li>
                                                         <li><a href="#">Expression</a></li>
-                                                        <li><a href="#">Install</a></li>
                                                         <li><a href="#">Tutorial</a></li>
-                                                        <li class="dropdown"><a href="#">3rd level</a>
-                                                            <ul class="dropdown-menu sub-menu">
-                                                                <li><a href="#">Example menu</a></li>
-                                                                <li><a href="#">Example menu</a></li>
-                                                                <li><a href="#">Example menu</a></li>
-                                                            </ul>
-                                                        </li>
+
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown">
-                                                    <a href="#">Install</a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#">Python</a>
-                                                            <ul class="dropdown-menu sub-menu">
-                                                                <li><a href="#">Install with Python 2</a></li>
-                                                                <li><a href="#">Install with Python 3</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#">R versions</a>
-                                                            <ul class="dropdown-menu sub-menu">
-                                                                <li><a href="#">Install with R 3.2</a></li>
-                                                                <li><a href="#">Install with R 3.6</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
+                                                    <a href="#install">Install</a>
                                                 </li>
                                                 <li class="dropdown">
                                                     <a href="#">Tutorial</a>
@@ -104,18 +83,6 @@
                                                         <li><a href="#">Mapping and Expression</a></li>
                                                         <li><a href="#">Only Expression Analysis</a></li>
                                                     </ul>
-                                                </li>
-                                                <!--<li class="dropdown">
-                                                  <a href="#">Blog</a>
-                                                  <ul class="dropdown-menu">
-                                                    <li><a href="blog_left_sidebar.html">Blog left sidebar</a></li>
-                                                    <li><a href="blog_right_sidebar.html">Blog right sidebar</a></li>
-                                                    <li><a href="post_left_sidebar.html">Post left sidebar</a></li>
-                                                    <li><a href="post_right_sidebar.html">Post right sidebar</a></li>
-                                                  </ul>
-                                                </li>-->
-                                                <li>
-                                                    <a href="contact.html">Contact</a>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -231,44 +198,98 @@
                                 <div class="blank10"></div>
                             </div>
                         </div>
-                        <div class="tabbable">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#Linux" data-toggle="tab"><i class="icon-linux icon-2x"></i> Linux </a></li>
-                                <li><a href="#windows" data-toggle="tab"><i class="icon-windows icon-2x"></i> Windows </a></li>
-                                <li><a href="#mac" data-toggle="tab"><i class="icon-apple icon-2x"></i> Mac OS </a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="linux">
-                                    <p>
-                                        <strong>Augue iriure</strong> dolorum per ex, ne iisque ornatus veritus duo. Ex nobis integre lucilius sit, pri ea falli ludus appareat. Eum quodsi fuisset id, nostro patrioque qui id. Nominati eloquentiam in mea.
-                                    </p>
-                                    <p>
-                                        No eum sanctus vituperata reformidans, dicant abhorreant ut pro. Duo id enim iisque praesent, amet intellegat per et, solet referrentur eum et.
-                                    </p>
-                                    <p>
-                                        Tale dolor mea ex, te enim assum suscipit cum, vix aliquid omittantur in. Duo eu cibo dolorum menandri, nam sumo dicit admodum ei. Ne mazim commune honestatis cum, mentitum phaedrum sit et.
-                                    </p>
-                                </div>
-                                <div class="tab-pane" id="windows">
-                                    <p>
-                                        Tale dolor mea ex, te enim assum suscipit cum, vix aliquid omittantur in. Duo eu cibo dolorum menandri, nam sumo dicit admodum ei. Ne mazim commune honestatis cum, mentitum phaedrum sit et.
-                                    </p>
-                                    <p>
-                                        Tale dolor mea ex, te enim assum suscipit cum, vix aliquid omittantur in. Duo eu cibo dolorum menandri, nam sumo dicit admodum ei. Ne mazim commune honestatis cum, mentitum phaedrum sit et.
-                                    </p>
-                                </div>
-                                <div class="tab-pane" id="Mac">
-                                    <p>
-                                        Cu cum commodo regione definiebas. Cum ea eros laboramus, audire deseruisse his at, munere aeterno ut quo. Et ius doming causae philosophia, vitae bonorum intellegat usu cu.
-                                    </p>
-                                    <p>
-                                        Tale dolor mea ex, te enim assum suscipit cum, vix aliquid omittantur in. Duo eu cibo dolorum menandri, nam sumo dicit admodum ei. Ne mazim commune honestatis cum, mentitum phaedrum sit et.
-                                    </p>
+
+
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="general">
+                                <p>
+                                    If you have correctly install all requirements, follow the steps below to install <strong>consexpression</strong>:
+                                </p>
+
+                                <p>
+                                    <i class="icon-terminal icon-1x"></i> Access the <strong>R</strong> workspace via the terminal: by typing:
+                                <div class="control-group success"> <label class="control-label" for="inputWarning">R</label> </div> 
+                                You can also access the R workspace through an IDE like RStudio. 
+                                In R workspace, follow commands: 
+                                </p>
+                                <pre class="prettyprint linenums">
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("DESeq")
+BiocManager::install("edgeR")
+BiocManager::install("baySeq")
+BiocManager::install("EBSeq")
+BiocManager::install("samr")
+BiocManager::install("NOISeq")
+BiocManager::install("limma")
+BiocManager::install("DESeq2")
+BiocManager::install("devtools")
+BiocManager::install("pachterlab/sleuth")</pre>
+                                <small>* These commands was tested in R language version 3.6.2</small>
+                            </div>
+                            <!-- blank divider -->
+                            <div class="row">
+                                <div class="span12">
+                                    <div class="blank10"></div>
                                 </div>
                             </div>
+                            <p>Download or clone consexpression</p>
+                            
+                            <i class="icon-terminal icon-1x"></i> In terminal:
+                            <p>Go to folder where you like put consexpression code:</p>
+                            <pre class="prettyprint linenums">
+cd my_folder
+git clone git@github.com:costasilvati/consexpression.git
+                            </pre>
+                            
+
+                            <!-- blank divider -->
+                            <div class="row">
+                                <div class="span12">
+                                    <div class="blank10"></div>
+                                </div>
+                            </div>
+                            <h5 id="headings">Specific Instructions</h5>
+                            <div class="accordion" id="accordion2">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#linux">
+                                            <i class="icon-caret-right"></i> Linux instructions <i class="icon-linux icon-2x"></i> </a>
+                                    </div>
+                                    <div id="linux" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            Working...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#windows">
+                                            <i class="icon-caret-right"></i> Windows instructions <i class="icon-windows icon-2x"></i> </a>
+                                    </div>
+                                    <div id="windows" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            Working...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#mac">
+                                            <i class="icon-caret-right"></i> Mac OS instructions <i class="icon-apple icon-2x"></i> </a>
+                                    </div>
+                                    <div id="mac" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            Working...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <pre class="prettyprint linenums">
-				 &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; ... &lt;/html&gt;
+
+                        <!--<pre class="prettyprint linenums">
+                                 &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; ... &lt;/html&gt;
                         </pre>
                         <h5>Typography and links</h5>
                         <p>
@@ -276,7 +297,7 @@
                         </p>
                         <p>
                             All basic bootstrap components style also changed with 'overwrite.css' file such as buttons, navigation, menu..etc
-                        </p>
+                        </p>-->
 
                     </div> <!-- span12 -->
                 </div><!-- row -->
@@ -309,12 +330,7 @@
                     <div class="span3">
                         <div class="widget">
                             <h5>Browse pages</h5>
-                            <ul class="list list-ok">
-                                <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                                <li><a href="#">Tamquam ponderum at eum, nibh dicta offendit mei</a></li>
-                                <li><a href="#">Vix no vidisse dolores intellegam</a></li>
-                                <li><a href="#">Est virtute feugiat accommodare eu</a></li>
-                            </ul>
+                            
                         </div>
                     </div>
                     <div class="span3">
