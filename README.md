@@ -18,6 +18,7 @@ Make download of consexpression. Unzip the file , change to the unzipped directo
 # Usage
 Edit configuration file whit expermient data.
 
-# Configuration file path is: dao/CONFIG_tool.txt. A genome and GTF/GFF annotation file is necessary.
+# Configuration file path: 
+dao/CONFIG_tool.txt. A genome and GTF/GFF annotation file is necessary.
 
 In consexpression directory type: python experiment.py dao/CONFIG_tool.txt
