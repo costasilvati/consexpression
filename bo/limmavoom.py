@@ -1,3 +1,4 @@
+from rpy2.rinterface_lib.embedded import RRuntimeError
 
 from bo.message import Message
 import rpy2.robjects as robjects
@@ -72,4 +73,4 @@ class LimmaVoom (object):
                 self._message.message_9("--- limma-voom: is completed!")
             except RRuntimeError as rre:
                 self._message.message_9("Error in limma-voom execution: " + str(rre))
-                # raise rre
+                raise rre

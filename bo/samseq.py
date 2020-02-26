@@ -1,3 +1,4 @@
+from rpy2.rinterface_lib.embedded import RRuntimeError
 
 from bo.message import Message
 import rpy2.robjects as robjects
@@ -54,9 +55,9 @@ class SamSeq (object):
                 grup = grup + '"' + ind + '",'
             grup = grup[:(len(grup) - 1)]
 
-            cm = 'SAMseq.test = SAMseq(m, as.factor(rep(c('
-            cm = cm + grup + '),each=' + str(self._replic) + ')), resp.type = '+ self._class + ', geneid = rownames(m), genenames = rownames(m), nperms = 100)'
-            #print(cm)
+            cm = 'SAMseq.test = SAMseq(m, as.factor(rep(c('+ grup + '),each=' + str(self._replic)
+            cm = cm + ')), resp.type = '+ self._class + ', geneid = row.names(m), genenames = row.names(m), nperms = 100)'
+            print(cm)
             res = robjects.r(cm)
             res = robjects.r('SAMseq.result.table = rbind(SAMseq.test$siggenes.table$genes.up, SAMseq.test$siggenes.table$genes.lo)')
             res = robjects.r('SAMseq.score = rep(0, nrow(m))')
@@ -68,4 +69,4 @@ class SamSeq (object):
             self._message.message_9("--- SAMSeq: is completed!")
         except RRuntimeError as rre:
             self._message.message_9("Error in SAMSeq execution: " + str(rre))
-            # raise rre
+            raise rre

@@ -242,7 +242,7 @@
 				}
 				
 				instance.$slider.css({
-					width	: instance.sliderW + 10 // TODO: +10px seems to solve a firefox "bug" :S
+					width	: instance.sliderW + 10
 				});
 						
 				// slide to the current element

@@ -1,6 +1,8 @@
 # coding=utf-8
 
 import rpy2.robjects as robjects
+from rpy2.rinterface_lib.embedded import RRuntimeError
+
 from bo.message import Message
 from rpy2.rinterface import *
 import warnings
@@ -83,14 +85,14 @@ class DESeq (object):
             res = robjects.r(wr)
         except RRuntimeError as rre:
             self._message.message_9("Error in DESeq execution: " + str(rre))
-            #raise rre
+            raise rre
 
         self._message.message_9("--- DESeq: is completed!")
 
 # =============================== TESTES DA CLASSE ==================================
-# inp = '/home/juliana/Documentos/Projeto_Juliana/Datasets/consexpression_replics_table_count.csv'
+# inp = 'consexpression_replics_table_count.csv'
 # gr = ["g1", "g2"]
 # rp = 2
-# out = '/home/juliana/Documentos/Projeto_Juliana/Datasets/consexpression_deseq.csv'
+# out = 'consexpression_deseq.csv'
 # t = DESeq(inp, gr, rp, out)
 # t.run_deseq()

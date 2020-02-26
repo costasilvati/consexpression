@@ -1469,7 +1469,7 @@ i.icon-bg-dark {
 }
 
 .tab-content {
-  	overflow: auto;
+  	overflow: visible;
 	padding: 20px;
 	background: #f8f8f8;
 }

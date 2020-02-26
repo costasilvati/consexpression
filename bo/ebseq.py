@@ -1,3 +1,4 @@
+from rpy2.rinterface_lib.embedded import RRuntimeError
 
 from bo.message import Message
 import rpy2.robjects as robjects
@@ -59,4 +60,4 @@ class Ebseq (object):
             self._message.message_9("--- EBSeq: is completed!")
         except RRuntimeError as rre:
             self._message.message_9("Error in baySeq execution: " + str(rre))
-            # raise rre
+            raise rre

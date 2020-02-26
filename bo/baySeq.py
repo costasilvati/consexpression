@@ -1,4 +1,5 @@
 # coding=utf-8
+from rpy2.rinterface_lib.embedded import RRuntimeError
 
 from bo.message import Message
 import rpy2.robjects as robjects
@@ -56,7 +57,7 @@ class BaySeq(object):
             res = robjects.r('library("IRanges")')
             res = robjects.r('library("GenomeInfoDb")')
             res = robjects.r('library("abind")')
-            res = robjects.r('library("perm")')
+            # res = robjects.r('library("perm")')
             res = robjects.r('library("GenomicRanges")')
             res = robjects.r('library("baySeq")')
 
@@ -87,13 +88,13 @@ class BaySeq(object):
             self._message.message_9("--- baySeq is completed!")
         except RRuntimeError as rre:
             self._message.message_9("Error in baySeq execution: " + str(rre))
-            #raise rre
+            raise rre
 
 #========================= TESTE da CLASSE==============
-# inp = '/home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/results_gencode/TopHat_results/bayseq/UHR_vs_Brain_gencode_TopHat_baySeq.csv'
+# inp = 'bayseq/UHR_vs_Brain_gencode_TopHat_baySeq.csv'
 # grp = "g1", "g2"
 # rep = 7
-# out = '/home/juliana/Documentos/Projeto_Juliana/Datasets/consexpression_baySeq_out.csv'
+# out = 'consexpression_baySeq_out.csv'
 # b = BaySeq(inp, grp, rep, out)
 # read_bay = open(inp, 'r')
 # c_b = 1

@@ -1,6 +1,8 @@
 # coding=utf-8
 
 import rpy2.robjects as robjects
+from rpy2.rinterface_lib.embedded import RRuntimeError
+
 from bo.message import Message
 from rpy2.rinterface import *
 import warnings
@@ -75,13 +77,13 @@ class Noiseq(object):
             self._message.message_9("--- NOISeq: is completed!")
         except RRuntimeError as rre:
             self._message.message_9("Error in NOISeq execution: " + str(rre))
-            #raise rre
+            raise rre
 #========================= TESTE da CLASSE==============
-# inp = '/home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/results_gencode/TopHat_results/noiseq/UHR_vs_Brain_gencode_TopHat_NOISeq.csv'
-# inp = '/home/juliana/Documentos/Projeto_Juliana/Datasets/consexpression_NOISeq.csv'
+# inp = 'UHR_vs_Brain_gencode_TopHat_NOISeq.csv'
+# inp = 'consexpression_NOISeq.csv'
 # grp = "g1", "g2"
 # rep = 1
-# out = '/home/juliana/Documentos/Projeto_Juliana/Datasets/consexpression_NOISeq_out.csv'
+# out = 'consexpression_NOISeq_out.csv'
 # b = Noiseq(inp, grp, rep, out)
 # read_bay = open(inp, 'r')
 # c_b = 0

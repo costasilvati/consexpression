@@ -3,6 +3,7 @@
 from bo.message import Message
 
 class ExperimentDao(object):
+
     """
     Object manager data of experiment
     """
@@ -90,7 +91,7 @@ class ExperimentDao(object):
             self._output = parms[self._output_parm]
 
 # # # #================ TESTE DA CLASSE =====================================
-# file = "/home/juliana/Dropbox/UTFPR/PPGBIOINFO/Projeto/RNA_tool/dao/CONFIG_tool"
+# file = "dao/CONFIG_tool"
 # exp = ExperimentDao()
 # exp.read_configuration_file(file)
 # print "---"

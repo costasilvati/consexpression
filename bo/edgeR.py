@@ -1,5 +1,5 @@
 # coding=utf-8
-
+from rpy2.rinterface_lib.embedded import RRuntimeError
 from rpy2.robjects import r
 import rpy2.robjects as robjects
 from bo.message import Message
@@ -84,4 +84,4 @@ class EdgeR(object):
             self._message.message_9(finish_message)
         except RRuntimeError as rre:
             self._message.message_9("Error in edgeR execution: " + str(rre))
-            #raise rre
+            raise rre
