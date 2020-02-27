@@ -1,13 +1,13 @@
 #======== CONFIGURATION FILE
 #======== EXPERIMENT
-NAME: new_2020
+NAME: experiment_name
 REPLIC: 1
 GROUP_NUMBER: 2
-GROUP_NAMES: g11,g21
-REFERENCE_GENOME:
+GROUP_NAMES: group1,group2
+REFERENCE_GENOME: /Documents/genome.fa
 #========= FILE PATH
-READS_DIRECTORY: /Volumes/samsung500/backup_DATA/PPGBIOINFO/Datasets
-GROUP_DIRECTORIES: SRX016367_MAQC_UHR_exp_2_using_phi_X_control_lane,SRX016359_MAQC_Brain_exp_2_using_phi_X_control_lane
+READS_DIRECTORY: /Documents/fastq_folder
+GROUP_DIRECTORIES: folder_group1,folder_group2
 #========= SEQUENCING
 PAIRED_END: False
 #========== MAPPING
@@ -15,6 +15,6 @@ THREADS: 4
 #========= COUNT MAPPING
 # Mode options: [union, intersection-strict, intersection-nonempty]
 MODE: union
-ANOTATION_FILE: /Volumes/samsung500/backup_DATA/PPGBIOINFO/Datasets/Referencias/grch37_v19_genecode/gencode.v19.chr_patch_hapl_scaff.annotation.gtf
+ANOTATION_FILE: /Documents/genome_annotation.gtf
 #========= OUTPUT
-OUTPUT: /Users/julianacostasilva/Documents/consexpression
+OUTPUT: /Documents/consexpression_out

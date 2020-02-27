@@ -415,7 +415,7 @@ class Experiment(object):
 
 if __name__ == "__main__":
     expBo = Experiment()
-    config_file = "/Users/julianacostasilva/PycharmProjects/consexpression/dao/CONFIG_tool.txt" # sys.argv[1]
+    config_file = sys.argv[1]
     exp_d = ExperimentDao()
     expBo.init_experiment(exp_d, config_file)
     if(exp_d._reference != ""):
