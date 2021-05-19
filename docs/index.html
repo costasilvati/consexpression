@@ -212,6 +212,12 @@
                     <li><a href="https://htseq.readthedocs.io/en/release_0.11.1/">HTSeq</a>, is a Python framework to
                         work with high-throughput sequencing data.
                     </li>
+                    <li><a href="http://xmlsoft.org/downloads.html">lib-xml2</a>
+                        is known to be very portable, the library should build and work without serious troubles on a variety of systems.
+                    </li>
+                    <li><a href="https://packages.debian.org/pt-br/jessie/libcurl4-openssl-dev">libcurl4-openssl-dev</a>
+                        Only Linux.
+                    </li>
                 </ul>
 
                 <!-- blank divider -->
@@ -238,6 +244,8 @@
                         <pre class="prettyprint linenums">
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
+    install.packages("XML")
+    install.packages("RCurl")
 BiocManager::install("DESeq")
 BiocManager::install("edgeR")
 BiocManager::install("baySeq")
