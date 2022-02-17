@@ -100,8 +100,8 @@ class Experiment(object):
     def rep_valid(self, rep):
         """
         Verify if number of replicates technical and biological is valid (>= 1).
-        basestring :param rep_t:
-        basestring :param rep_b:
+        str :param rep:
+        str :param rep_b:
         void :return:
         """
         ok = False
@@ -214,7 +214,6 @@ class Experiment(object):
                 else:
                     self.message.message_4("Task: Mapping don't run correctly.")
             self._out_mapp.append(path_find)
-
 
     def get_reads_file(self, dir):
         """
