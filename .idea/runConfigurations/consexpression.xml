@@ -12,7 +12,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <option name="SCRIPT_NAME" value="$PROJECT_DIR$/consexpression.py" />
-    <option name="PARAMETERS" value="-n experiment_name -gn 0b b sc0b scB -s 2 3 2 3 -r o -rp pathreads -sd 0b b sc0b scB -gtf ggg -pe" />
+    <option name="PARAMETERS" value="-n experiment_name -gn 0b b sc0b scB -r o -rp pathreads -sd 0b b sc0b scB -gtf ggg -pe -tb count.txt" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="false" />

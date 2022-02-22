@@ -1,14 +1,17 @@
 import os.path
 import sys
 import argparse
+import glob
 from dao.experimentDao import ExperimentDao
 from os.path import exists
 
 
 def main():
     args = line_parameters()
-
     expDao = parameters_valid(args)
+    if(expDao):
+        exit(0)
+    expDao._replic = get_reads_file(expDao._read_directory)
     # print (args)
 
 
@@ -21,8 +24,8 @@ def line_parameters():
                         help="Exepriment Name (text)")
     parser.add_argument('--group_name', "-gn", nargs='+', type=str, required=True,
                         help="List with groups name, use a space separetd list.") #use to identify n of groups
-    parser.add_argument('--samples',"-s", nargs='+',type=int, required=True,
-                    help="Number of biological replics by group, use a integer value by each group(space separeted list).")
+    #parser.add_argument('--samples',"-s", nargs='+',type=int, required=True,
+    #                help="Number of biological replics by group, use a integer value by each group(space separeted list).")
     parser.add_argument('--reference', "-r",type=str,
                         help="Path to FASTA file genome reference sequence.")
     parser.add_argument('--reads_path', "-rp",type=str,
@@ -68,10 +71,15 @@ def rep_valid(rep):
         exit()
 
 def parameters_valid(args):
-    result_text = "Parameters \n"
+    """
+    Verify line parameters
+    :param args: List of parameters
+    :return: ExpreimentDao object
+    """
+    result_text = ""
     expDao = ExperimentDao()
     expDao._name = name_valid(args.name)
-#-- É melhor receber os nomes dos grupos, ou dos FASTQ?? - STOP
+
     if (args.table_count == None):
         print("Mapping, count and expression!")
         if (os.path.exists(args.reference) == False):
@@ -86,13 +94,50 @@ def parameters_valid(args):
     else:
         print("Olnly expression...")
 
-    if(len(args.group_name) != len(args.samples)):
-        result_text = result_text + "ERROR: \n - It List group_name and samples need be same length of elements. \n"
-    else:
-        expDao._group_name = args.group_name
-        expDao._replic = args.samples
-        expDao._group_number = len(args.group_name)
+    expDao._group_name = args.group_name
+    expDao._group_number = len(args.group_name)
+    expDao._read_directory = args.reads_path
+    expDao._replic = get_reads_file(expDao._read_directory)
 
+    if(len(result_text) > 1 ):
+        print(result_text)
+        return None
+    else:
+        return expDao
+
+
+def file_valid(self, path):
+    """
+    Verify if path is a file
+    :param self:
+    :param path: File path with extension
+    :return: boolean
+    """
+    if os.path.isfile(path):
+        print(" File: ", path, " found!")
+        return True
+    else:
+        print(" ERROR: File: ", path, " NOT FOUND!")
+        return False
+
+def get_reads_file(listdir):
+    """
+    Get all fastq path of listdir
+    :param listdir: List of directories by samples
+    :return:
+    """
+    fastq_file = listdir
+    length = len(listdir)
+    i = 0
+    # Iterating using while loop
+    while i < length:
+        path = listdir[i] + "*.fastq" #serach
+        for file in glob.glob(path):
+            fastq_file[listdir[i]].append(file)
+            print(file)
+        if len(fastq_file) == 0:
+            print("ERROR: Not found files FASTQ in directory " + listdir[i])
+    return fastq_file
 
 
 if __name__ == '__main__':
