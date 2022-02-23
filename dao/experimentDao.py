@@ -25,7 +25,7 @@ class ExperimentDao(object):
         self._annotation_type_parm = "ANOTATION_TYPE"
         self._output_parm = "OUTPUT"
         self._name = ""
-        self._replic = 0
+        self._replic = []
         self._group_number = 0
         self._group_name = []
         self._reference = ""
