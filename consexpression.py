@@ -8,10 +8,9 @@ from os.path import exists
 
 def main():
     args = line_parameters()
-    expDao = parameters_valid(args)
-    if(expDao):
+    exp_dao = parameters_valid(args)
+    if(exp_dao):
         exit(0)
-    expDao._replic = get_reads_file(expDao._read_directory)
     # print (args)
 
 
@@ -28,10 +27,10 @@ def line_parameters():
     #                help="Number of biological replics by group, use a integer value by each group(space separeted list).")
     parser.add_argument('--reference', "-r",type=str,
                         help="Path to FASTA file genome reference sequence.")
-    parser.add_argument('--reads_path', "-rp",type=str,
-                        help="Path sequencing FASTQ file (reads) to directory.")
-    parser.add_argument("--sub_dir", "-sd", nargs='+',type=str,
-                        help="List for each group FASTQ directory, need one directory by group.")
+    parser.add_argument('--reads_path', "-rp",nargs='+', type=str,
+                        help="Path sequencing FASTQ file (reads) to directory (one for each treatment)")
+    # parser.add_argument("--sub_dir", "-sd", nargs='+',type=str,
+    #                     help="List for each group FASTQ directory, need one directory by group.")
     parser.add_argument('--threads', "-t",type=int,required=False,default=2)
     parser.add_argument('--paired_end',"-pe", action='store_true',
                         help="Is a paired-end sequencing.")
@@ -64,7 +63,7 @@ def rep_valid(rep):
     """
     ok = False
     if rep >= 1:
-        print("More then one!")
+        print("More then one replic!")
     else:
         print("1 replic or more (technique or biological)")
         print("number of replics in line 5 - 6")
@@ -77,33 +76,41 @@ def parameters_valid(args):
     :return: ExpreimentDao object
     """
     result_text = ""
-    expDao = ExperimentDao()
-    expDao._name = name_valid(args.name)
+    exp_dao_tmp = ExperimentDao()
+    exp_dao_tmp._name = name_valid(args.name)
+    exp_dao_tmp._group_name = args.group_name
 
     if (args.table_count == None):
         print("Mapping, count and expression!")
         if (os.path.exists(args.reference) == False):
             result_text = result_text, "ERROR: \n - Reference file not found in path.", args.reference, "\n"
         else:
-            expDao._reference = args.reference
+            exp_dao_tmp._reference = args.reference
 
         if (os.path.exists(args.annotation) == False):
             result_text = result_text, "ERROR: \n - Annotation file not found in path.", args.annotation, "\n"
         else:
-            expDao._annotation_file = args.annotation
+            exp_dao_tmp._annotation_file = args.annotation
+
+        if (os.path.exists(args.reads_path)):
+            exp_dao_tmp._read_directory = args.reads_path
+            exp_dao_tmp._replic = get_reads_file(expDao._read_directory)
+
+            if(exp_dao_tmp._replic == None):
+                result_text = result_text, "FASTQ reads not found in ", exp_dao_tmp._read_directory, "\n"
+            else:
+                relation_file_group(exp_dao_tmp._replic, exp_dao_tmp._group_name)
+        else:
+            result_text = result_text, "Path ",args.reads_path," to reads directory NOT FOUND. \n"
     else:
         print("Olnly expression...")
 
-    expDao._group_name = args.group_name
-    expDao._group_number = len(args.group_name)
-    expDao._read_directory = args.reads_path
-    expDao._replic = get_reads_file(expDao._read_directory)
 
-    if(len(result_text) > 1 ):
+    if(len(result_text) > 2 ):
         print(result_text)
         return None
     else:
-        return expDao
+        return exp_dao_tmp
 
 
 def file_valid(self, path):
@@ -120,26 +127,30 @@ def file_valid(self, path):
         print(" ERROR: File: ", path, " NOT FOUND!")
         return False
 
-def get_reads_file(listdir):
+def get_reads_file(path_dir):
     """
     Get all fastq path of listdir
     :param listdir: List of directories by samples
     :return:
     """
-    fastq_file = listdir
-    length = len(listdir)
-    i = 0
-    # Iterating using while loop
-    while i < length:
-        path = listdir[i] + "*.fastq" #serach
-        for file in glob.glob(path):
-            fastq_file[listdir[i]].append(file)
-            print(file)
-        if len(fastq_file) == 0:
-            print("ERROR: Not found files FASTQ in directory " + listdir[i])
+    fastq_files = None
+    path = path_dir + "*.fastq" #serach
+    for file in glob.glob(path):
+        fastq_files.append(file)
+        print("File: ", file , "found!")
+    if (fastq_files != None):
+        pass
+    else:
+        print("ERROR: Not found files FASTQ in directory " + path_dir)
+
     return fastq_file
 
 
+def relation_file_group (fastq_files, group_names):
+    print("--- Organize FASTQ files by Treatment ----")
+    print("Group numbers:")
+    print(group_names)
+# STOP - test fastq found
 if __name__ == '__main__':
     expDao = ExperimentDao()
     sys.exit(main())
