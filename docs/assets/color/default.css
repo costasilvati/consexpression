@@ -1,0 +1,277 @@
+::-moz-selection {
+  background: #00A9CC;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #00A9CC;
+  color: #fff;
+  text-shadow: none;
+}
+
+
+a {
+	color: #00A9CC;
+}
+
+a:hover {
+	color:#004A7F;
+}
+
+footer .nav-list li a:hover,footer ul.regular li a:hover  {
+	color:#004A7F;
+}
+
+.btn-link:hover {
+  color: #004A7F;
+}
+
+.btn-color {
+  background: #00A9CC;
+  *background: #00A9CC;
+}
+.btn-color:hover,
+.btn-color.active,
+.btn-color.disabled,
+.btn-color[disabled] {
+  background: #004A7F;
+  *background: #004A7F;
+}
+
+/* portfolio */
+ul.filter li.active a{
+    background: #00A9CC;	
+}
+
+ul.filter li a:hover {
+    color: #004A7F;
+}
+
+.portfolio-area li:hover .desc {
+    background: #004A7F;	
+}
+
+
+
+/* fontawesome icons */
+.icon-square:hover,
+.icon-rounded:hover,
+.icon-circled:hover {
+    background-color: #004A7F;
+}
+[class^="icon-"].active,
+[class*=" icon-"].active {
+    background-color: #00A9CC;
+}
+
+/* header */
+
+.navbar .nav li.active a {
+	color:#00A9CC;	
+}
+
+.navbar .nav li ul.dropdown-menu li a:hover, .navbar .nav li.active ul.dropdown-menu li a:hover  {
+	background:#004A7F;
+	
+}
+.color {
+	background: #00A9CC;
+	color:#fff;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: #00A9CC;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+}
+
+/* sequence slider */
+.sequence-nav .next:hover,.sequence-nav .prev:hover {
+	background: #00A9CC;
+}
+
+/* breadcrumb */
+.breadcrumb {
+
+}
+
+
+/* accordion */
+.accordion-heading a:hover {
+	color: #00A9CC;
+}
+.accordion-heading .active{
+	color: #00A9CC;
+}
+
+/* pricing box */
+.priceBox.special .emphasis {
+  background: #00A9CC;
+}
+
+/* tagline */
+.tagline {
+	border-bottom:5px solid #00A9CC;
+}
+
+
+/* styled list */
+ul.list.colored li:before {
+	color: #00A9CC;
+}
+
+
+/* button */
+.btn-link {
+	color: #00A9CC;
+}
+
+.nav .dropdown-toggle .caret {
+  margin-top: 6px;
+  border-top-color: #00A9CC;
+  border-bottom-color: #00A9CC;
+}
+
+
+
+/* tabs */
+.tabbable .nav > li > a:hover,
+.tabbable .nav > li > a:focus {
+  	background-color: #00A9CC;
+}
+.tabbable .nav-tabs > .active > a,
+.tabbable .nav-tabs > .active > a:hover,
+.tabbable .nav-tabs > .active > a:focus {
+  	background-color: #00A9CC;
+}
+
+/* accordion */
+.accordion-heading:hover .accordion-toggle,
+.accordion-heading:hover .accordion-toggle.inactive {
+	background:#00A9CC;
+}
+.accordion-heading .accordion-toggle.active {
+	background:#00A9CC;
+}
+
+
+
+/* label */
+.label-orange,
+.badge-orange {
+  background-color: #00A9CC;
+}
+
+
+/* nav */
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  background: #00A9CC;
+}
+
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  background: #00A9CC;
+}
+
+.nav .dropdown-toggle .caret {
+  border-top-color: #00A9CC;
+  border-bottom-color: #00A9CC;
+}
+
+/* custom progress bar according template skin */
+.progress-orange .bar,
+.progress .bar-orange {
+  background: #00A9CC;
+}
+
+.progress-orange.progress-striped .bar,
+.progress-striped .bar-orange {
+  background: #00A9CC;
+}
+
+/* pagination */
+
+.pagination ul li a:hover {
+  background: #00A9CC;
+  border-color:#00A9CC;
+}
+
+
+/* widget */
+aside .widget ul.cat li a:hover {
+	color: #00A9CC;
+}
+
+aside .widget ul.recent-posts li a:hover {
+	color: #00A9CC;
+}
+
+aside .widget ul.tags li a {
+  background: #00A9CC;
+}
+
+
+/* article */
+
+.entry-body a h5.title:hover {
+	color: #00A9CC;
+}
+
+article.blog-post .post-heading h3 a:hover {
+	color:#00A9CC;
+}
+
+article.last-post {
+	background: #00A9CC;
+}
+
+ul.time-post li.year{
+	border-bottom:1px solid #00A9CC;
+}
+
+ /* 404 */
+ 
+
+.error-body{
+	background:#00A9CC;
+	padding:20px;
+	text-align:center;
+}
+
+/* footer */
+footer .subfooter {
+	border-top:5px solid #00A9CC;
+}
+
+/* misc */
+a.thumbnail:hover {
+  border-color: #00A9CC;
+}
+
+ul.filter li.active a:hover,.flex-control-nav li a:hover, .flex-control-nav li a.active{
+	background: #00A9CC;
+}
+
+.thumbnail h4 a:hover, .thumbnail .meta  span a:hover, ul.recent li h6 a:hover, ul.post-meta li a:hover, .media-body span, .media-body .media-heading a:hover, form label span, article.last-post h5 a:hover{
+	color: #00A9CC;
+	text-decoration:none;
+}
