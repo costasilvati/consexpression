@@ -6,9 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-# Icloud extensions
-*.icloud
-
 # Distribution / packaging
 .Python
 build/
