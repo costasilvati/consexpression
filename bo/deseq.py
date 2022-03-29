@@ -90,9 +90,9 @@ class DESeq (object):
         self._message.message_9("--- DESeq: is completed!")
 
 # =============================== TESTES DA CLASSE ==================================
-# inp = 'consexpression_replics_table_count.csv'
-# gr = ["g1", "g2"]
+# inp = '/Volumes/SD128/bioconvergencia/reads_RNApa/kallisto_quant_RNApa_apa_1B_0B.csv'
+# gr = ["0b", "pb"]
 # rp = 2
-# out = 'consexpression_deseq.csv'
+# out = 'RNApa_apa_1B_0B-consexpression_deseq.csv'
 # t = DESeq(inp, gr, rp, out)
-# t.run_deseq()
+# t.run_deseq() # Não temos DESeq na versão necessária

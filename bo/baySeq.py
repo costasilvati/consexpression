@@ -14,18 +14,18 @@ class BaySeq(object):
     Commands to run BaySeq expression analysis
     """
 
-    def __init__(self, count, group, repl, out):
+    def __init__(self, count, group, repl, output):
         """
         Define the edgeR object
         :param count:
         :param group:
         :param repl:
-        :param out:
+        :param output:
         """
         self._table_count = count
         self._groups_name = group
         self._replic = repl
-        self._output = out
+        self._output = output
         self._message = Message()
         self._likelihood_column = 2 + len(group)*repl
         self._fdr_de_column = 4 + len(group)*repl
@@ -42,7 +42,6 @@ class BaySeq(object):
         except ValueError:
             de = 0
         return de
-
 
     def run_bayseq(self):
         """
@@ -91,18 +90,20 @@ class BaySeq(object):
             raise rre
 
 #========================= TESTE da CLASSE==============
-# inp = 'bayseq/UHR_vs_Brain_gencode_TopHat_baySeq.csv'
-# grp = "g1", "g2"
-# rep = 7
-# out = 'consexpression_baySeq_out.csv'
-# b = BaySeq(inp, grp, rep, out)
+# inp = '/Volumes/SD128/bioconvergencia/reads_RNApa/kallisto_quant_scRNA_apa_tpm_tab.csv'
+# gr = ["0b", "pb"]
+# rp = 2
+# out = 'RNApa_apa_1B_0B-consexpression_deseq.csv'
+# b = BaySeq(inp, gr, rp, out)
+# b.run_bayseq()
+# Error in baySeq execution: Error in file(file, "rt") : não é possível abrir a conexão
 # read_bay = open(inp, 'r')
 # c_b = 1
 # for line in iter(read_bay):
-#     #print('--' + line)
-#     if c_b > 0:
-#        gene = line.split("\t")
-#        print(gene[0])
-#        v = b.run_de(gene)
-#        print('--> '+ str(v))
-#     c_b += 1
+# #     #print('--' + line)
+# #     if c_b > 0:
+# #        gene = line.split("\t")
+# #        print(gene[0])
+# #        v = b.run_de(gene)
+# #        print('--> '+ str(v))
+# #     c_b += 1

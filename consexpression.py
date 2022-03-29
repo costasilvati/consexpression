@@ -79,31 +79,35 @@ def parameters_valid(args):
     exp_dao_tmp = ExperimentDao()
     exp_dao_tmp._name = name_valid(args.name)
     exp_dao_tmp._group_name = args.group_name
-
-    if (args.table_count == None):
-        print("Mapping, count and expression!")
-        if (os.path.exists(args.reference) == False):
-            result_text = result_text, "ERROR: \n - Reference file not found in path.", args.reference, "\n"
-        else:
-            exp_dao_tmp._reference = args.reference
-
-        if (os.path.exists(args.annotation) == False):
-            result_text = result_text, "ERROR: \n - Annotation file not found in path.", args.annotation, "\n"
-        else:
-            exp_dao_tmp._annotation_file = args.annotation
-
-        if (os.path.exists(args.reads_path)):
-            exp_dao_tmp._read_directory = args.reads_path
-            exp_dao_tmp._replic = get_reads_file(expDao._read_directory)
-
-            if(exp_dao_tmp._replic == None):
-                result_text = result_text, "FASTQ reads not found in ", exp_dao_tmp._read_directory, "\n"
+    try:
+        if (args.table_count == None):
+            print("Mapping, count and expression!")
+            if (os.path.exists(args.reference) == False):
+                result_text = result_text, "ERROR: \n - Reference file not found in path.", args.reference, "\n"
             else:
-                relation_file_group(exp_dao_tmp._replic, exp_dao_tmp._group_name)
+                exp_dao_tmp._reference = args.reference
+
+            if (os.path.exists(args.annotation) == False):
+                result_text = result_text, "ERROR: \n - Annotation file not found in path.", args.annotation, "\n"
+            else:
+                exp_dao_tmp._annotation_file = args.annotation
+
+            if (os.path.exists(args.reads_path)):
+                exp_dao_tmp._read_directory = args.reads_path
+                exp_dao_tmp._replic = get_reads_file(expDao._read_directory)
+
+                if(exp_dao_tmp._replic == None):
+                    result_text = result_text, "FASTQ reads not found in ", exp_dao_tmp._read_directory, "\n"
+                else:
+                    relation_file_group(exp_dao_tmp._replic, exp_dao_tmp._group_name)
+            else:
+                result_text = result_text, "Path ",args.reads_path," to reads directory NOT FOUND. \n"
         else:
-            result_text = result_text, "Path ",args.reads_path," to reads directory NOT FOUND. \n"
-    else:
-        print("Olnly expression...")
+            print("Olnly expression...")
+    except TypeError:
+        print("ERROR: Some parameter have a wrong type!")
+    except:
+        print("Unspected exception!")
 
 
     if(len(result_text) > 2 ):
@@ -143,7 +147,7 @@ def get_reads_file(path_dir):
     else:
         print("ERROR: Not found files FASTQ in directory " + path_dir)
 
-    return fastq_file
+    return fastq_files
 
 
 def relation_file_group (fastq_files, group_names):
@@ -151,6 +155,8 @@ def relation_file_group (fastq_files, group_names):
     print("Group numbers:")
     print(group_names)
 # STOP - test fastq found
+
+
 if __name__ == '__main__':
     expDao = ExperimentDao()
     sys.exit(main())

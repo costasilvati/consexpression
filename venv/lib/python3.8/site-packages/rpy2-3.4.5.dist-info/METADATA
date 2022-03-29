@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: rpy2
+Version: 3.4.5
+Summary: Python interface to the R language (embedded R)
+Home-page: https://rpy2.github.io
+Author: Laurent Gautier
+Author-email: lgautier@gmail.com
+License: GPLv2+
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Dist: cffi (>=1.10.0)
+Requires-Dist: jinja2
+Requires-Dist: pytz
+Requires-Dist: tzlocal
+Provides-Extra: all
+Requires-Dist: pandas ; extra == 'all'
+Requires-Dist: pytest ; extra == 'all'
+Requires-Dist: numpy ; extra == 'all'
+Provides-Extra: numpy
+Requires-Dist: pandas ; extra == 'numpy'
+Provides-Extra: pandas
+Requires-Dist: numpy ; extra == 'pandas'
+Requires-Dist: pandas ; extra == 'pandas'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+
+Python interface to the R language.
+
+`rpy2` is running an embedded R, providing access to it from Python 
+using R's own C-API through either:
+
+- a high-level interface making R functions an objects just like Python
+  functions and providing a seamless conversion to numpy and pandas data 
+  structures
+- a low-level interface closer to the C-API
+
+It is also providing features for when working with jupyter notebooks or
+ipython.
+
+
