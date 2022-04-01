@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/consexpression.iml" filepath="$PROJECT_DIR$/.idea/consexpression.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/consexpression2/.idea/consexpression2.iml" filepath="$USER_HOME$/PycharmProjects/consexpression2/.idea/consexpression2.iml" />
+      <module fileurl="file://$USER_HOME$/Library/CloudStorage/OneDrive-Pessoal/Alura/R/Analise de dados_Introdução_com_R/projeto_aulas/.idea/projeto_aulas.iml" filepath="$USER_HOME$/Library/CloudStorage/OneDrive-Pessoal/Alura/R/Analise de dados_Introdução_com_R/projeto_aulas/.idea/projeto_aulas.iml" />
     </modules>
   </component>
 </project>

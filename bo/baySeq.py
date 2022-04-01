@@ -77,6 +77,7 @@ class BaySeq(object):
             groups = groups + ', DE = c('+ '1,' * self._replic
             groups = groups + '2,' * self._replic
             groups = groups[:(len(groups) - 1)] + "))"
+            print(groups)
             res = robjects.r(groups)
             res = robjects.r('CD <- new("countData", data = m, replicates = replicates, groups = groups)')
             res = robjects.r('libsizes(CD) <- getLibsizes(CD)')
@@ -90,12 +91,12 @@ class BaySeq(object):
             raise rre
 
 #========================= TESTE da CLASSE==============
-# inp = '/Volumes/SD128/bioconvergencia/reads_RNApa/kallisto_quant_scRNA_apa_tpm_tab.csv'
-# gr = ["0b", "pb"]
-# rp = 2
-# out = 'RNApa_apa_1B_0B-consexpression_deseq.csv'
-# b = BaySeq(inp, gr, rp, out)
-# b.run_bayseq()
+inp = '/Users/julianacostasilva/Library/CloudStorage/OneDrive-Pessoal/ProjetoDoutorado/bioconvergencia/reads_RNApa/kallisto_quant_align_apa_1B_0B/gonoda/gonoda_tpm.csv'
+gr = ["0b", "pb"]
+rp = 2
+out = '/Users/julianacostasilva/Library/CloudStorage/OneDrive-Pessoal/ProjetoDoutorado/bioconvergencia/reads_RNApa/RNApa_apa_1B_0B_gonoda_consexpression_bayseq.csv'
+b = BaySeq(inp, gr, rp, out)
+b.run_bayseq()
 # Error in baySeq execution: Error in file(file, "rt") : não é possível abrir a conexão
 # read_bay = open(inp, 'r')
 # c_b = 1
